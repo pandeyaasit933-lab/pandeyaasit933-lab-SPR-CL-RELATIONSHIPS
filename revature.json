@@ -1,0 +1,20 @@
+{
+  "type": "java",
+  "testFiles": [
+    {
+      "path": "src/test/java/EntityTest.java",
+      "testCases": [
+        {
+          "methodName": "ManyToOneRelationshipTest",
+          "label": "Verify ManyToOne relationship between Album and Artist",
+          "description": "Checks that the 'artist' field in Album is annotated with @ManyToOne, ensuring proper JPA relationship mapping with Artist."
+        },
+        {
+          "methodName": "OneToManyRelationshipTest",
+          "label": "Verify OneToMany relationship between Album and Song",
+          "description": "Checks that the 'songs' field in Album is annotated with @OneToMany and is a List, ensuring proper JPA relationship mapping with Song."
+        }
+      ]
+    }
+  ]
+}
