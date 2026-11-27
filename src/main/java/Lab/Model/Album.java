@@ -13,7 +13,6 @@ import java.util.List;
  * may be created by one artist) and a one-to-many relationship with songs (one album may have many songs). Review the
  * other provided entities, Artist and Song, to see examples of @OneToMany and @ManyToOne annotations in use.
  */
-
 @Entity
 //For the sake of brevity, the following 4 annotations tell Lombok to generate boilerplate code at compile-time.
 @EqualsAndHashCode
@@ -30,11 +29,15 @@ public class Album {
     /**
      * Review the other model classes to see examples of annotations that link entities.
      */
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "artist_fk")
     private Artist artist;
 
     /**
      * Review the other model classes to see examples of annotations that link entities.
      */
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "album_fk")
     private List<Song> songs;
 
     public Album(String title) {
@@ -52,7 +55,6 @@ public class Album {
                 '}';
     }
 }
-
 
 
 
